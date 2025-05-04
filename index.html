@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>I'm Sorry Rubaiya 💔</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: 'Dancing Script', cursive;
+      background: linear-gradient(to bottom right, #ffccd5, #ffe5ec);
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+      color: #c2185b;
+      font-weight: 900;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 38px;
+      margin-bottom: 20px;
+      color: #ad1457;
+      font-weight: 900;
+    }
+
+    .letter-body {
+      font-size: 22px;
+      line-height: 2;
+      text-align: justify;
+      font-weight: 900;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: opacity 1s ease, max-height 2s ease;
+    }
+
+    .letter-body.show {
+      opacity: 1;
+      max-height: 2000px;
+    }
+
+    .icons {
+      font-size: 30px;
+      text-align: center;
+      margin: 15px 0;
+    }
+
+    .signature {
+      margin-top: 40px;
+      text-align: right;
+      font-style: italic;
+      color: #880e4f;
+      font-weight: 900;
+    }
+
+    .reveal-btn {
+      display: block;
+      margin: 40px auto 30px;
+      padding: 14px 30px;
+      background-color: #e91e63;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      font-size: 22px;
+      font-family: 'Dancing Script', cursive;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      font-weight: 900;
+    }
+
+    .reveal-btn:hover {
+      background-color: #c2185b;
+    }
+
+    .floating-icons {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .icon {
+      position: absolute;
+      font-size: 32px;
+      animation: float 10s infinite ease-in-out;
+      color: rgba(255, 0, 102, 0.2);
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) scale(0.8);
+      }
+      100% {
+        transform: translateY(-100vh) scale(1.2);
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 15px;
+      }
+      h1 {
+        font-size: 30px;
+      }
+      .letter-body {
+        font-size: 18px;
+      }
+      .reveal-btn {
+        font-size: 18px;
+        padding: 10px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="floating-icons">
+  <div class="icon" style="left: 10%;">💔</div>
+  <div class="icon" style="left: 25%;">😭</div>
+  <div class="icon" style="left: 40%;">❤️</div>
+  <div class="icon" style="left: 60%;">💘</div>
+  <div class="icon" style="left: 80%;">😢</div>
+</div>
+
+<h1>I'm So Sorry, My Love 💔</h1>
+<div class="icons">🥺💖😔</div>
+
+<button class="reveal-btn" onclick="revealLetter()">Click to Unlock My Heart ❤️</button>
+
+<div class="letter-body" id="loveLetter">
+  <p>My Dearest Rubaiya,</p>
+
+  <p>From the deepest corners of my heart, I'm writing these words with tears and hope. I know I hurt you, and I hate myself for it. You are the one who gives my life meaning, and without you, everything feels so cold… so empty.</p>
+
+  <p>I miss your voice, your smile, your laugh — your love. The way you look at me, the way your presence makes everything feel right. Without you, I feel lost in a world that used to feel like heaven when you were in it.</p>
+
+  <p>Rubaiya, you are not just a part of my life — you are my whole heart. I was foolish, but I promise you with every heartbeat that I’ll never make the same mistake again. I want to cherish you, honor you, and love you more every single day.</p>
+
+  <p>Please forgive me. Let me hold your hand again, kiss your forehead, and whisper how much I love you. I can't imagine a life without you, and I don't want to. You are my forever.</p>
+
+  <p>I love you madly, deeply, endlessly…</p>
+
+  <div class="signature">
+    Yours forever,<br/>
+    Tanvir 💘
+  </div>
+</div>
+
+<audio id="apologyMusic" src="your-music-file.mp3"></audio>
+
+<script>
+  function revealLetter() {
+    document.getElementById("loveLetter").classList.add("show");
+    document.getElementById("apologyMusic").play();
+  }
+
+  // Floating icons generation
+  const icons = ["💔", "😢", "❤️", "💖", "🥺"];
+  const container = document.querySelector('.floating-icons');
+
+  for (let i = 0; i < 15; i++) {
+    const el = document.createElement('div');
+    el.classList.add('icon');
+    el.style.left = `${Math.random() * 100}%`;
+    el.style.animationDuration = `${5 + Math.random() * 10}s`;
+    el.textContent = icons[Math.floor(Math.random() * icons.length)];
+    container.appendChild(el);
+  }
+</script>
+
+</body>
+</html>
